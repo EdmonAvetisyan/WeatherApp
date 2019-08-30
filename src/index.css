@@ -1,0 +1,191 @@
+@font-face {
+	font-family: "Roboto", sans-serif;
+	src: local("Roboto"),
+		url("./fonts/Roboto-Regular.ttf") format('woff2');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: #33495f;
+	font-family: "Roboto",
+		"Helvetica",
+		"Arial",
+		sans-serif;
+}
+
+#app {
+	display: flex;
+	height: 100vh;
+}
+
+#aside {
+	flex-grow: 1;
+	align-self: stretch;
+	padding: 0 60px;
+	background: #33495f url("./media/weather.gif") center no-repeat;
+	background-size: contain;
+	box-shadow: 
+	5px 0px 5px -3px rgba(0,0,0,0.2),8px 0px 10px 1px rgba(0,0,0,0.14),3px 0px 14px 2px rgba(0,0,0,0.12);	
+	z-index: 1;
+}
+
+#main {
+	flex-grow: 4;
+	padding: 0 5%;
+	background: rgb(249, 219, 98);
+	background: linear-gradient(180deg, rgba(249, 219, 98, 1) 50%, rgba(255, 242, 193, 1) 100%);
+}
+
+h1 {
+	text-align: center;
+	font-size: 40px;
+	text-transform: capitalize;
+	user-select: none;
+}
+
+header,
+form,
+.response {
+	padding: 30px 0;
+}
+
+form {
+	display: flex;
+}
+
+.search-input {
+	flex-grow: 2;
+	padding: 15px;
+	color: #33495f !important;
+}
+
+form .MuiInput-underline::before {
+	border-color: #33495f;
+}
+
+form .MuiInput-underline::after {
+	border-color: #33495f;
+}
+
+.search-btn {
+	flex-grow: .3;
+	margin-left: 10px !important;
+	color: #33495f !important;
+	border: none !important;
+	border-bottom: 1px solid #33495f !important;
+	border-radius: 0 !important;
+}
+
+.progress {
+	display: flex;
+	justify-content: center;
+}
+
+.progress .MuiCircularProgress-colorPrimary {
+	color: inherit;
+}
+
+.bookmark-menu {
+	float: right;
+	margin-top: 27px;
+}
+
+.bookmark-menu button {
+	color: #33495f;
+}
+
+.response {
+	display: flex;
+}
+
+.response ul {
+	font-size: 22px;
+	line-height: 30px;
+	list-style: none;
+}
+
+.response ul:first-of-type {
+	margin-right: 20px;
+	text-align: right;
+	text-transform: capitalize;
+}
+
+.response ul:first-of-type li:first-of-type {
+	padding: 6px 0 12px;
+}
+
+.response ul:nth-child(2) li:first-of-type {
+	margin-top: 2px;
+}
+
+.response ul:nth-child(2) li:first-of-type button {
+	margin-top: -5px;
+	color: inherit;
+}
+
+@media only screen and (max-width: 767px) {
+	#app {
+		flex-grow: unset;
+		flex-direction: column;
+		align-content: stretch;
+	}
+
+	#aside {
+		flex-grow: unset;
+		height: 101px;
+		padding: 20px 0;
+		background-size: 110px;
+		box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+	}
+
+	#main {
+		padding: 0 2%;
+	}
+
+	header {
+		padding: 20px 0 0;
+	}
+
+	h1 {
+		font-size: 30px;
+	}
+
+	form {
+		flex-direction: column;
+		padding: 20px 0
+	}
+
+	.search-input {
+		padding: 2px 6px;
+	}
+
+	.search-btn {
+		margin: 20px 0 0 0 !important;
+	}
+
+	.bookmark-menu {
+		float: none;
+		margin-top: 0;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin: 0 2% 2% 0;
+	}
+
+	.response {
+		justify-content: center;
+		padding: 0 0 10px;
+	}
+
+	.response ul {
+		font-size: 18px;
+	}
+
+	.response ul:first-of-type {
+		margin-right: 12px;
+	}
+}
